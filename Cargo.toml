@@ -24,6 +24,7 @@ rand-std = ["rand/std"]
 recovery = ["secp256k1-sys/recovery"]
 lowmemory = ["secp256k1-sys/lowmemory"]
 global-context = ["std", "rand-std"]
+json = ["schemars"]
 
 [dependencies]
 secp256k1-sys = { version = "0.4.0", default-features = false, path = "./secp256k1-sys" }
@@ -31,12 +32,18 @@ bitcoin_hashes = { version = "0.9", optional = true }
 rand = { version = "0.6", default-features = false, optional = true }
 serde = { version = "1.0", default-features = false, optional = true }
 
+[dependencies.schemars]
+version = "0.8.0"
+optional = true
+
 
 [dev-dependencies]
 rand = "0.6"
 rand_core = "0.4"
 serde_test = "1.0"
 bitcoin_hashes = "0.9"
+serde_json = "1.0"
+jsonschema-valid = "0.4.0"
 
 [target.wasm32-unknown-unknown.dev-dependencies]
 wasm-bindgen-test = "0.3"
