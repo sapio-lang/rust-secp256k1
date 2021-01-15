@@ -68,7 +68,7 @@ pub const ONE_KEY: SecretKey = SecretKey([0, 0, 0, 0, 0, 0, 0, 0,
                                           0, 0, 0, 0, 0, 0, 0, 1]);
 
 /// A Secp256k1 public key, used for verification of signatures
-#[derive(Copy, Clone, PartialEq, Eq, Debug, PartialOrd, Ord, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
 #[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct PublicKey(
     #[cfg_attr(feature = "schemars", schemars(schema_with="crate::schemas::publickey"))]
